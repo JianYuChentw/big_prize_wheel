@@ -1,0 +1,83 @@
+{
+	"info": {
+		"_postman_id": "c16c4fb5-b0af-49fc-b1d8-3cb7004969c0",
+		"name": "big_prize_wheel",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "28506239",
+		"_collection_link": "https://galactic-spaceship-883381.postman.co/workspace/My-Workspace~244466ee-e8de-4ffc-8475-7eab64bdf66f/collection/28506239-c16c4fb5-b0af-49fc-b1d8-3cb7004969c0?action=share&source=collection_link&creator=28506239"
+	},
+	"item": [
+		{
+			"name": "player",
+			"item": [
+				{
+					"name": "getPlayerData",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:3000/player"
+					},
+					"response": []
+				},
+				{
+					"name": "LoginPlayer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"phoneNumber\":\"0912345678\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/player/login"
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"playerName\":\"新玩家Ａ\",\n    \"phoneNumber\":\"0912345678\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/player/new"
+					},
+					"response": []
+				},
+				{
+					"name": "goLottery",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:3000/go-lottery"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "admin",
+			"item": [
+				{
+					"name": "adminLogin",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
