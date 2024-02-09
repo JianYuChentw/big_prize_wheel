@@ -1,6 +1,6 @@
 # 幸運輪大抽獎  
 
-![專案封面圖](./public/image/big-prize-wheel-high-resolution-logo.png)
+![專案封面圖](./public/LotteryMachine.jpeg)
 
 ## 介紹
  本專案為SAKAWA Technology 新人專案，題目為機率可控型抽獎機，面向使用者為顧客(前台相關頁面)及業主(中台相關頁面)，對應不同使用者有不同功能。
