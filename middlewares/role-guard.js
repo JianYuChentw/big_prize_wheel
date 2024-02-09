@@ -11,6 +11,7 @@ function roleGuard(role) {
       const errMsg = role === 'admin' ? '非管理員登入狀態' : '非玩家登入狀態';
       return res.json({ loginStatus: false, error: errMsg });
     }
+
     req[role] = checkId;
     next();
   };

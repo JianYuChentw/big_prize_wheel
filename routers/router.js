@@ -44,7 +44,7 @@ function canAdminUseFunctionMiddleware(req, res, next) {
 //管理員登入
 router.post('/admin/login', adminCtrl.adminLogin);
 
-router.get('/admin/account', roleGuard('admin'), adminCtrl.getadminData);
+router.get('/admin', roleGuard('admin'), adminCtrl.getadminData);
 
 //管理員登出
 router.put('/admin/logOut', roleGuard('admin'), adminCtrl.adminLogOut);

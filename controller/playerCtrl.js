@@ -36,6 +36,24 @@ async function login(req, res) {
       throw new Error('登入失敗,電話號碼有誤！');
     }
 
+    // 檢查是否有其他裝置登入
+    const allSessions = req.sessionStore.sessions;
+    Object.keys(allSessions).forEach((sessionID) => {
+      console.log(JSON.parse(allSessions[sessionID]));
+      const sessionData = JSON.parse(allSessions[sessionID]);
+
+      if (sessionData.player === chekMemberResult.id) {
+        // 刪除符合條件的 session
+        req.sessionStore.destroy(sessionID, function (err) {
+          if (err) {
+            console.error('登出前裝置發生錯誤:', err);
+          } else {
+            console.log('出登出前裝置：', sessionID);
+          }
+        });
+      }
+    });
+
     ///給與權限動作
     req.session[roleTag] = chekMemberResult.id;
     console.log(`\u001b[33m`, `${chekMemberResult.name}登入成功`, `\u001b[37m`);
